@@ -11,7 +11,7 @@ def home():
 
 @app.route('/metrics')
 def get_metrics():
-    cpu_usage = psutil.cpu_percent(interval=1)
+    cpu_usage = psutil.cpu_percent(interval=5)
     memory_usage = psutil.virtual_memory().percent
     return jsonify(cpu_usage=cpu_usage, memory_usage=memory_usage)
 
